@@ -1,0 +1,11 @@
+services:
+  deepface:
+    container_name: deepface
+    build: .
+    volumes:
+      - ./data:/app/data
+      - ./resource_monitor.py:/app/resource_monitor.py
+      - ./test.py:/app/test.py
+      - /home/polygon/.deepface/weights:/root/.deepface/weights/
+    ports:
+      - 5000:5000
