@@ -1,13 +1,11 @@
 # base image
-FROM python:3.8.12
-LABEL org.opencontainers.image.source=https://github.com/kabinh07/surya.git
+FROM tensorflow/tensorflow:2.10.0-gpu
+LABEL org.opencontainers.image.source https://github.com/kavinh07/deepface
 
 # -----------------------------------
 # create required folder
 RUN mkdir -p /app && chown -R 1001:0 /app
 RUN mkdir /app/deepface
-
-
 
 # -----------------------------------
 # switch to application directory
@@ -58,6 +56,7 @@ RUN pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted
 # -----------------------------------
 # environment variables
 ENV PYTHONUNBUFFERED=1
+ENV PYTHONPATH="/app:$PYTHONPATH"
 
 # -----------------------------------
 # run the app (re-configure port if necessary)

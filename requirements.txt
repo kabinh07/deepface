@@ -13,3 +13,8 @@ mtcnn>=0.1.0
 retina-face>=0.0.14
 fire>=0.4.0
 gunicorn>=20.1.0
+onnx
+onnxruntime
+tf2onnx
+# tensorrt>=10.9.0.34
+# nvidia-pyindex>=1.0.9

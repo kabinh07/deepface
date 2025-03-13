@@ -1,5 +1,6 @@
 from deepface import DeepFace
 
+
 def run_deepface_inference(model_name="Facenet512"):
     """ Run DeepFace model inference and measure resource utilization """
     img1 = "data/image_1.jpg"  # Change to your image path
@@ -8,7 +9,7 @@ def run_deepface_inference(model_name="Facenet512"):
     print(f"Running DeepFace model: {model_name}...\n")
 
     # Run DeepFace model
-    result = DeepFace.verify(img1, img2, model_name=model_name, detector_backend="retinaface", enforce_detection=False)
+    result = DeepFace.verify(img1, img2, model_name=model_name, detector_backend="yolov8", enforce_detection=False)
 
     # Print results
     print("\n=== DeepFace Results ===")

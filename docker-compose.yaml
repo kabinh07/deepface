@@ -6,6 +6,14 @@ services:
       - ./data:/app/data
       - ./resource_monitor.py:/app/resource_monitor.py
       - ./test.py:/app/test.py
+      - ./converter.py:/app/converter.py
       - /home/polygon/.deepface/weights:/root/.deepface/weights/
     ports:
       - 5000:5000
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]
