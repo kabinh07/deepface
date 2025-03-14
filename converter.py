@@ -19,13 +19,3 @@ onnx_model, _ = tf2onnx.convert.from_keras(model, input_signature=spec, opset=13
 
 with open(onnx_model_path, "wb") as f:
     f.write(onnx_model.SerializeToString())
-
-# model.model.save("data/saved_model")
-
-# # Convert the model to TensorRT
-# converter = trt.TrtGraphConverterV2(input_saved_model_dir="data/saved_model")
-# trt_model = converter.convert()
-
-# # Save the optimized model
-# converter.save("data/trt_saved_model")
-# print("TensorRT model saved successfully!")
