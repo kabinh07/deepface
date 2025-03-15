@@ -19,3 +19,5 @@ benchmarks/dataset
 benchmarks/lfwe
 venv
 *.onnx
+*.pt
+*.pth

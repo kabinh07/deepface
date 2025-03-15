@@ -16,5 +16,6 @@ gunicorn>=20.1.0
 onnx
 onnxruntime
 tf2onnx
+torch
 # tensorrt>=10.9.0.34
 # nvidia-pyindex>=1.0.9
